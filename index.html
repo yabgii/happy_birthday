@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happy Birthday ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* CSS STYLES */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      /* Music button */
+      .music-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 18px;
+        border-radius: 30px;
+        border: none;
+        background: #ff5f7e;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Main content */
+      .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 60px 20px;
+        text-align: center;
+        animation: fadeIn 2s ease;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 25px;
+        animation: glow 2s infinite alternate;
+      }
+
+      h2 {
+        margin: 40px 0 20px;
+        font-size: 2rem;
+      }
+
+      .intro,
+      .closing {
+        font-size: 1.2rem;
+        line-height: 1.9;
+        margin-bottom: 30px;
+      }
+
+      .signature {
+        margin-top: 40px;
+        font-size: 1.3rem;
+        font-style: italic;
+      }
+
+      /* Slider - RESIZED HERE */
+      .slider {
+        width: 350px; /* Increased from 280px */
+        height: 450px; /* Increased from 380px */
+        margin: 30px auto;
+        position: relative;
+      }
+
+      .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .slide.active {
+        opacity: 1;
+        transform: translateX(0);
+        z-index: 1;
+      }
+
+      .slide img,
+      .slide video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      /* Floating hearts */
+      .hearts::before {
+        content: "❤️ 💕 💖 💗 💓";
+        position: fixed;
+        top: -10%;
+        left: 50%;
+        font-size: 2rem;
+        animation: float 12s linear infinite;
+        opacity: 0.8;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translate(-50%, 0);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, 120vh);
+          opacity: 0;
+        }
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff;
+        }
+        to {
+          text-shadow: 0 0 30px #ffe0e9;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="music-btn" onclick="playMusic()">Tap for music 🎵</button>
+
+    <div class="hearts"></div>
+
+    <div class="container">
+      <h1>Happy Birthday, EMbEYTEY 💖</h1>
+
+      <p class="intro">
+        Happy Birthday, Beautiful. 💖 It’s amazing how much we’ve shared in such
+        a little amount of time. We already have a lifetime of memories, and
+        honestly, I can’t even remember what life was like before you. It feels
+        like you’ve always been by my side.
+      </p>
+
+      <h2>YOU 💫</h2>
+
+      <div class="slider">
+        <div class="slide active">
+          <img src="/media/img1.jpg" alt="Memory" />
+        </div>
+        <div class="slide"><img src="/media/img13.jpg" alt="Memory" /></div>
+        <div class="slide">
+          <video src="/media/img3.mp4" muted loop></video>
+        </div>
+        <div class="slide">
+          <video src="/media/img8.mp4" muted loop></video>
+        </div>
+        <div class="slide"><img src="/media/img2.jpg" alt="Memory" /></div>
+        <div class="slide"><img src="/media/img12.jpg" alt="Memory" /></div>
+        <div class="slide"><img src="/media/img11.jpg" alt="Memory" /></div>
+        <div class="slide">
+          <video src="/media/img16.mp4" muted loop></video>
+        </div>
+        <div class="slide">
+          <video src="/media/img17.mp4" muted loop></video>
+        </div>
+        <div class="slide"><img src="/media/img14.jpg" alt="Memory" /></div>
+        <div class="slide"><img src="/media/img6.jpg" alt="Memory" /></div>
+        <div class="slide"><img src="/media/img15.jpg" alt="Memory" /></div>
+        <div class="slide">
+          <video src="/media/img10.mp4" muted loop></video>
+        </div>
+        <div class="slide">
+          <video src="/media/img19.mp4" muted loop></video>
+        </div>
+        <div class="slide">
+          <video src="/media/img20.mp4" muted loop></video>
+        </div>
+        <div class="slide">
+          <video src="/media/img18.mp4" muted loop></video>
+        </div>
+        <div class="slide"><img src="/media/img5.jpg" alt="Memory" /></div>
+
+        <div class="slide"><img src="/media/img4.jpg" alt="Memory" /></div>
+      </div>
+
+      <p class="closing">Happy Birthday to the girl who owns my heart.</p>
+      <p class="signature">Yours, Always ❤️</p>
+    </div>
+
+    <script>
+      /* Music */
+      function playMusic() {
+        const music = document.getElementById("bgMusic");
+        music.play();
+        document.querySelector(".music-btn").style.display = "none";
+      }
+
+      /* Slider logic */
+      let current = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+          const video = slide.querySelector("video");
+          if (video) video.pause();
+
+          if (i === index) {
+            slide.classList.add("active");
+            if (video) {
+              video.currentTime = 0;
+              video.play();
+            }
+          }
+        });
+      }
+
+      setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }, 5000);
+    </script>
+  </body>
+</html>
