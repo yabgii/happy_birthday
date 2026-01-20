@@ -20,7 +20,7 @@
         overflow-x: hidden;
       }
 
-      /* Music button */
+      /* Music button - RESPONSIVE */
       .music-btn {
         position: fixed;
         bottom: 20px;
@@ -36,15 +36,39 @@
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
       }
 
-      /* Main content */
+      /* Responsive adjustments for music button */
+      @media (max-width: 480px) {
+        .music-btn {
+          padding: 10px 15px;
+          font-size: 0.9rem;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+
+      /* Main content - RESPONSIVE */
       .container {
         max-width: 900px;
         margin: auto;
-        padding: 60px 20px;
+        padding: 40px 20px;
         text-align: center;
         animation: fadeIn 2s ease;
       }
 
+      /* Responsive padding for container */
+      @media (max-width: 768px) {
+        .container {
+          padding: 30px 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 25px 10px;
+        }
+      }
+
+      /* Responsive typography */
       h1 {
         font-size: 3rem;
         margin-bottom: 25px;
@@ -56,11 +80,55 @@
         font-size: 2rem;
       }
 
+      /* Responsive font sizes */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+          margin-bottom: 20px;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+          margin: 30px 0 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+          margin-bottom: 15px;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+          margin: 25px 0 12px;
+        }
+      }
+
       .intro,
       .closing {
         font-size: 1.2rem;
         line-height: 1.9;
         margin-bottom: 30px;
+      }
+
+      /* Responsive text sizes */
+      @media (max-width: 768px) {
+        .intro,
+        .closing {
+          font-size: 1.1rem;
+          line-height: 1.7;
+          margin-bottom: 25px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .intro,
+        .closing {
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 20px;
+        }
       }
 
       .signature {
@@ -69,12 +137,59 @@
         font-style: italic;
       }
 
-      /* Slider - RESIZED HERE */
+      /* Responsive signature */
+      @media (max-width: 768px) {
+        .signature {
+          margin-top: 30px;
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .signature {
+          margin-top: 25px;
+          font-size: 1.1rem;
+        }
+      }
+
+      /* Slider - RESPONSIVE */
       .slider {
-        width: 350px; /* Increased from 280px */
-        height: 450px; /* Increased from 380px */
+        width: 350px;
+        height: 450px;
         margin: 30px auto;
         position: relative;
+      }
+
+      /* Responsive slider sizes */
+      @media (max-width: 768px) {
+        .slider {
+          width: 320px;
+          height: 420px;
+          margin: 25px auto;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .slider {
+          width: 300px;
+          height: 400px;
+          margin: 20px auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slider {
+          width: 280px;
+          height: 380px;
+          margin: 15px auto;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .slider {
+          width: 250px;
+          height: 340px;
+        }
       }
 
       .slide {
@@ -100,7 +215,22 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
       }
 
-      /* Floating hearts */
+      /* Responsive border-radius for images/videos */
+      @media (max-width: 480px) {
+        .slide img,
+        .slide video {
+          border-radius: 20px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .slide img,
+        .slide video {
+          border-radius: 15px;
+        }
+      }
+
+      /* Floating hearts - RESPONSIVE */
       .hearts::before {
         content: "❤️ 💕 💖 💗 💓";
         position: fixed;
@@ -109,6 +239,55 @@
         font-size: 2rem;
         animation: float 12s linear infinite;
         opacity: 0.8;
+      }
+
+      /* Responsive hearts */
+      @media (max-width: 768px) {
+        .hearts::before {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hearts::before {
+          font-size: 1.5rem;
+        }
+      }
+
+      /* Horizontal scroll prevention for very small screens */
+      @media (max-width: 350px) {
+        body {
+          overflow-x: hidden;
+          width: 100%;
+        }
+
+        .container {
+          padding: 20px 5px;
+        }
+      }
+
+      /* Landscape orientation adjustments */
+      @media (max-height: 500px) and (orientation: landscape) {
+        .container {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 2rem;
+          margin-bottom: 15px;
+        }
+
+        .slider {
+          width: 250px;
+          height: 300px;
+          margin: 15px auto;
+        }
+
+        .intro,
+        .closing {
+          font-size: 0.9rem;
+          margin-bottom: 15px;
+        }
       }
 
       @keyframes float {
@@ -156,10 +335,10 @@
       <h1>Happy Birthday, EMbEYTEY 💖</h1>
 
       <p class="intro">
-        Happy Birthday, Beautiful. 💖 It’s amazing how much we’ve shared in such
+        Happy Birthday, Beautiful. 💖 It's amazing how much we've shared in such
         a little amount of time. We already have a lifetime of memories, and
-        honestly, I can’t even remember what life was like before you. It feels
-        like you’ve always been by my side.
+        honestly, I can't even remember what life was like before you. It feels
+        like you've always been by my side.
       </p>
 
       <h2>YOU 💫</h2>
@@ -240,6 +419,22 @@
         current = (current + 1) % slides.length;
         showSlide(current);
       }, 5000);
+
+      // Pause videos when page is not visible (to save resources)
+      document.addEventListener("visibilitychange", function () {
+        const videos = document.querySelectorAll("video");
+        if (document.hidden) {
+          videos.forEach((video) => video.pause());
+        } else {
+          const activeSlide = document.querySelector(".slide.active");
+          const activeVideo = activeSlide
+            ? activeSlide.querySelector("video")
+            : null;
+          if (activeVideo) {
+            activeVideo.play();
+          }
+        }
+      });
     </script>
   </body>
 </html>
